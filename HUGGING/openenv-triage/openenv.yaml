@@ -1,0 +1,18 @@
+name: "customer-support-triage"
+version: "1.0.0"
+description: "A real-world OpenEnv environment where an agent acts as Customer Support, triaging tickets and issuing refunds."
+author: "Antigravity"
+tasks:
+  - id: "easy"
+    description: "Close pre-resolved tickets without issuing refunds."
+  - id: "medium"
+    description: "Issue specific refunds based on company policy for delayed orders."
+  - id: "hard"
+    description: "Handle a mix of angry customers, policy abusers, and technical bugs within a strict budget."
+entrypoint: "src.environment:CustomerSupportEnv"
+modes:
+  - id: "python"
+    entrypoint: "src.environment:CustomerSupportEnv"
+  - id: "http"
+    port: 7860
+    entrypoint: "app:app"
